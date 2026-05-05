@@ -34,3 +34,18 @@ And now check what packages are installed in your environment
 ```
 pip freeze
 ```
+
+Now you should run the Django project on the server, so that you can ensure that the project has been successfully run
+```
+python manage.py runserver
+```
+
+# Print Hello World on Django app home page
+
+Create a views.py file in the Django app
+In url.py, import this code
+```
+from projectName import views
+```
+
+
