@@ -48,4 +48,19 @@ In url.py, import this code
 from projectName import views
 ```
 
+in urlpatter list, include this URL path
+```
+path('', views.home)
+```
+
+In the views file, create a function named home
+Import this package
+```
+from django.http import HttpResponse
+```
+
+```
+def home (request):
+    return HttpResponse("Hello World")
+```
 
