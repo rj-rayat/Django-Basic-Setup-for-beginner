@@ -59,8 +59,39 @@ Import this package
 from django.http import HttpResponse
 ```
 
+
+
 ```
 def home (request):
     return HttpResponse("Hello World")
 ```
 
+To render a page in Django, first create a template folder in the root, then write the template in settings.py. The code is below. Look at the template list in settings.py; here, you can see this code. Just insert the template
+
+```
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+
+Create index.html in the template folder. After creating the HTML file, go to views.py and import this
+
+```
+from django.shortcuts import render
+```
+
+```
+def home (request):
+   return render(request, 'index.html')
+```
